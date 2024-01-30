@@ -7,8 +7,8 @@ from torch_geometric.data import Data
 def get_dataset_from_file():
     file = open(file_name, 'r')
     n = int(file.readline())
-    if n != num_instance:
-        print("Num_instance not consistent!")
+    # if n != num_instance:
+    #     print("Num_instance not consistent!")
     dataset = []
     for instance in range(n):
 
@@ -18,6 +18,12 @@ def get_dataset_from_file():
         e_j = [int(j) for j in file.readline().split(' ')]
         v_color = [int(c) for c in file.readline().split(' ')]
         y = [int(y_i) for y_i in file.readline().split(' ')]
+        # 改动改动改动改动改动改动改动改动改动改动改动改动
+        if change_cri or use_max:
+            for i in range(len(y)):
+                if y[i] > 1:
+                    y[i] = 1
+
         x = [[] for _ in range(v)]
         for v_i in range(v):
             color = v_color[v_i]

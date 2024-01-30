@@ -24,6 +24,7 @@ def get_dataset():
 
         visualize_graph(dataset[data_id], color)
     torch.manual_seed(randomSeed)
+    random.seed(randomSeed)
     random.shuffle(dataset)
     train_dataset = dataset[:train_n]
     test_dataset = dataset[train_n:]
