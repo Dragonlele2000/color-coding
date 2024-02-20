@@ -1,9 +1,15 @@
-Gnn.py 运行程序
-config.py 修改配置
-  主要参数：
-	file_name = 'data3.txt'：选择k=3的数据集
-	file_name = 'data4.txt'：选择k=4的数据集
-	gamma：每训练20(配置参数print_interval)轮后学习率指数衰减
-  inputFile = False：不会生成新的数据集，而是从指定file_name中读取数据集
-  inputFile = True：会生成新数据集，并写入file_name（覆盖写）
-  draw_data = True：可以画出第data_id个样例
+GenerateDataset/config_generate：
+	生成数据集
+	主要参数：
+		k：颜色数
+
+Gnn_test/config_test：
+	训练网络，输出参数至Analyze文件夹
+	主要参数：
+		k：颜色数
+		use_ratio：使用'datak.txt'中数据的比例
+		train_ratio：训练样本比例
+		batch_size：批量训练大小
+
+VisualizeMatrix/config_visualize：
+	可视化矩阵，从Analyze文件夹中读取对应矩阵

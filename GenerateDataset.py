@@ -4,7 +4,7 @@ import torch
 from VisualizeGraph import visualize_graph
 from Solve import solve
 from torch_geometric.data import Data
-from config import *
+from config_generate import *
 
 
 def create_graph(v_l, v_u, k):
@@ -88,21 +88,26 @@ def generate_dataset():
     n = num_instance
     dataset = []
     random.seed(randomSeed)
-    f = 0
-    if inputFile:
-        f = open(file_name, "w")
-        f.write(str(n))
-        f.write("\n")
+
+    f = open(file_name, "w")
+    f.write(str(n))
+    f.write("\n")
     for instance in range(n):
-        if instance % 50 == 0:
-            print("Generating", instance, "-", instance + 50)
+        if instance % 5000 == 0:
+            print("Generating", instance, "-", instance + 5000)
         while True:
             data, v, e_i, e_j, v_color, y, positive = create_graph(v_l, v_u, k)
             if len(e_i) >= k * 2:
                 dataset.append(data)
                 break
-        if inputFile:
-            write_to_file(v, e_i, e_j, v_color, y, positive, f)
-    if inputFile:
-        f.close()
+        write_to_file(v, e_i, e_j, v_color, y, positive, f)
+    f.close()
     return dataset
+
+
+def main():
+    generate_dataset()
+
+
+if __name__ == '__main__':
+    main()
