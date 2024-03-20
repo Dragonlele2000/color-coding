@@ -1,0 +1,1 @@
+探索使用global_max_pool
