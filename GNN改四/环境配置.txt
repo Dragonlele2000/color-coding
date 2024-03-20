@@ -1,0 +1,4 @@
+anaconda和pytorch依照
+https://zhuanlan.zhihu.com/p/622878074
+torch-scatter,torch-sparse
+https://www.lsjlt.com/news/428043.html
