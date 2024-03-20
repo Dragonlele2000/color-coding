@@ -1,0 +1,19 @@
+cd drive/MyDrive/GNN
+
+!pip install torch_geometric
+!pip install torch_sparse-0.6.18+pt21cu121-cp310-cp310-linux_x86_64.whl
+!pip install torch_scatter-2.1.2+pt21cu121-cp310-cp310-linux_x86_64.whl
+!python Gnn_test.py
+
+qfhzdgt364
+IP 美国G1
+
+cd到目标文件夹
+!python Gnn_test.py
+
+
+slaybaughfiamma@gmail.com
+
+9g7praxbwf
+
+rnefjelechi1d@divermail.com
